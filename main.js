@@ -7,6 +7,7 @@ document.getElementById("guessed").style.display = "none";
 let chances = 10;
 let randomNumber = Math.floor(Math.random() * 100);
 
+//Butoon is clicked
 function btnClicked() {
   //WHATEVER THIS LET STUFF IS CALLED
   document.getElementById("guessIs").style.display = "block";
@@ -21,46 +22,7 @@ function btnClicked() {
   changeChances();
 }
 
-function getResponse(number) {
-  if (number.length === 0) {
-    //IF number IS LEFT BLANK
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-            >Please guess a number</strong
-          >
-        </p>
-        `;
-    document.body.style.background = "rgb(170, 170, 170)";
-  } else if (number > randomNumber) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-            >Your guess is too high.</strong
-          >
-        </p>
-        `;
-    document.body.style.background = "rgb(136, 0, 0)";
-  } else if (number < randomNumber) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-            >Your guess is too low.</strong
-          >
-        </p>
-        `;
-    document.body.style.background = "rgb(136, 0, 0)";
-  } else if (number == randomNumber) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-            >Your guess is right!</strong
-          >
-        </p>
-        `;
-    document.getElementById("inputNumber").style.borderColor = "green";
-    document.getElementById("chances").style.display = "none";
-    document.body.style.background = "green";
-  }
-}
-
-function randomResponse() {
+function guessIsResponse() {
   let randNum = Math.random();
   if (randNum <= 0.2) {
     document.getElementById("guessIs").innerHTML = `      <p>
@@ -115,5 +77,44 @@ function changeChances() {
   <strong>You have ${chances} chances left.</strong>
 </p>
 `;
+  }
+}
+
+function getResponse(number) {
+  if (number.length === 0) {
+    //IF number IS LEFT BLANK
+    document.getElementById("guessIs").innerHTML = `      <p>
+          <strong
+            >Please guess a number</strong
+          >
+        </p>
+        `;
+    document.body.style.background = "rgb(170, 170, 170)";
+  } else if (number > randomNumber) {
+    document.getElementById("guessIs").innerHTML = `      <p>
+          <strong
+            >Your guess is too high.</strong
+          >
+        </p>
+        `;
+    document.body.style.background = "rgb(136, 0, 0)";
+  } else if (number < randomNumber) {
+    document.getElementById("guessIs").innerHTML = `      <p>
+          <strong
+            >Your guess is too low.</strong
+          >
+        </p>
+        `;
+    document.body.style.background = "rgb(136, 0, 0)";
+  } else if (number == randomNumber) {
+    document.getElementById("guessIs").innerHTML = `      <p>
+          <strong
+            >Your guess is right!</strong
+          >
+        </p>
+        `;
+    document.getElementById("inputNumber").style.borderColor = "green";
+    document.getElementById("chances").style.display = "none";
+    document.body.style.background = "green";
   }
 }

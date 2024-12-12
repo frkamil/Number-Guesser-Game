@@ -7,7 +7,7 @@ document.getElementById("guessed").style.display = "none";
 let chances = 10;
 let randomNumber = Math.floor(Math.random() * 100);
 
-//Butoon is clicked
+//Button is clicked
 function btnClicked() {
   //WHATEVER THIS LET STUFF IS CALLED
   document.getElementById("guessIs").style.display = "block";
@@ -20,46 +20,6 @@ function btnClicked() {
 </p>
 `;
   changeChances();
-}
-
-function guessIsResponse() {
-  let randNum = Math.random();
-  if (randNum <= 0.2) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-      <strong
-           >guessIs: Without a Doubt.</strong
-       >
-       </p>
-        `;
-  } else if (randNum <= 0.4) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-               >guessIs: As I see it, yes.</strong
-           >
-           </p>
-            `;
-  } else if (randNum <= 0.6) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-              <strong
-                   >guessIs: Concentrate and ask again.</strong
-               >
-               </p>
-                `;
-  } else if (randNum <= 0.8) {
-    document.getElementById("guessIs").innerHTML = `      <p>
-      <strong
-           >guessIs: Don't count on it.</strong
-       >
-       </p>
-        `;
-  } else {
-    document.getElementById("guessIs").innerHTML = `      <p>
-          <strong
-               >guessIs: Outlook not so good,</strong
-           >
-           </p>
-            `;
-  }
 }
 
 function changeChances() {
